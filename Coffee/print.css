@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            background-image: url('beans.jpg');
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        h1, h2, h3, p {
+            margin: 10px;
+        }
