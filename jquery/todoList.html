@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+
+            $("#add-btn").click(function(){
+
+                let task = $("#todo").val().trim();
+                if(task!==""){
+                    $("#todo-list").append(
+                    `<li>${task} <button class="remove">X</button></li>`
+                );
+                
+
+                $("#todo").val("");
+            
+                }
+            });
+
+            $("todo-list").on("click","remove",function(){
+                $(this).parent().remove();
+            });
+
+            $("#todo").keypress(function(e){
+                if(e.which===13){
+                    $("#add-btn").click();
+
+                }
+            
+            
+
+            });
+            
+
+        });
+    </script>
+   <!--custom css-->
+   <link rel="stylesheet" href="css/style.css"> 
+
+    <title>Todo List</title>
+</head>
+<body>
+    <h2>To-Do list</h2>
+
+    <input type="text" name="todo" id="todo" placeholder="Add your task...!">
+    <button id="add-btn">ADD</button>
+
+    <ul id="todo-list"></ul>
+
+
+</body>
+</html>
